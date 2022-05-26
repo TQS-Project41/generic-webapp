@@ -1,9 +1,11 @@
+import { StatisticsPageComponent } from './pages/statistics-page/statistics-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RidersComponent } from './riders/riders.component';
+import { RidersPageComponent } from './pages/riders-page/riders-page.component';
 
 const routes: Routes = [
-  { path: 'riders', component: RidersComponent },
+  { path: 'riders', component: RidersPageComponent },
+  { path: 'statistics', component: StatisticsPageComponent },
 ];
 
 @NgModule({

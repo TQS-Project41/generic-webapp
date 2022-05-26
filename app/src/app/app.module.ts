@@ -1,26 +1,24 @@
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RidersComponent } from './riders/riders.component';
-import { StatisticsComponent } from './statistics/statistics.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LoginComponent } from './login/login.component';
-import { RiderComponent } from './rider/rider.component';
+import { RidersPageComponent } from './pages/riders-page/riders-page.component';
+import { StatisticsPageComponent } from './pages/statistics-page/statistics-page.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RidersComponent,
-    StatisticsComponent,
     NavbarComponent,
-    LoginComponent,
-    RiderComponent
+    RidersPageComponent,
+    StatisticsPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

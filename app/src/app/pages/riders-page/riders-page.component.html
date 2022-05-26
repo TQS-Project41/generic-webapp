@@ -1,0 +1,24 @@
+<h2>Riders</h2>
+
+<p>Currently we have 2 riders without a delivery</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Status</th>
+      <th scope="col">Localization</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let courier of couriers; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>
+        {{ courier.name }}
+      </td>
+      <td>{{ courier.status }}</td>
+      <td>{{ courier.localization }}</td>
+    </tr>
+  </tbody>
+</table>
