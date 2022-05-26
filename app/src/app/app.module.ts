@@ -8,7 +8,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RiderComponent } from './rider/rider.component';
-
+import { NgChartsModule } from 'ng2-charts/';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,11 +16,12 @@ import { RiderComponent } from './rider/rider.component';
     StatisticsComponent,
     NavbarComponent,
     LoginComponent,
-    RiderComponent
+    RiderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

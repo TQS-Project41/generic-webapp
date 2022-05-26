@@ -1,1 +1,46 @@
-<p>statistics works!</p>
+<div class="row">
+<div class="card col-3">
+    <div class="card-body">
+      <h5 class="card-title">Deliveries Today</h5>
+      <p class="card-text">
+        100
+      </p>
+    </div>
+  </div>
+
+
+  <div class="card col-3">
+    <div class="card-body">
+      <h5 class="card-title">Deliveries this week</h5>
+      <p class="card-text">
+        1200
+      </p>
+    </div>
+  </div>
+
+
+  <div class="card col-3">
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-text">
+        
+      </p>
+    </div>
+  </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div style="display: block;">
+            <canvas baseChart 
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [type]="barChartType">
+            </canvas>
+          </div>          
+    </div>
+
+
+</div>
