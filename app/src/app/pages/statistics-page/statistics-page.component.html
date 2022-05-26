@@ -1,0 +1,61 @@
+<!-- <div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Deliveries Today</h5>
+      <p class="card-text">
+        100
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Deliveries this week</h5>
+      <p class="card-text">
+        1200
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-text">
+
+      </p>
+    </div>
+  </div>
+</div> -->
+
+<div class="row row-cols-1 row-cols-md-4 g-3">
+  <div class="col-3 m-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Deliveries Today</h5>
+        <p class="card-text">100</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-3 m-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Deliveries this week</h5>
+        <p class="card-text">1200</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-3 m-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+  [plugins]="barChartPlugins" [legend]="barChartLegend" [type]="barChartType">
+</canvas>

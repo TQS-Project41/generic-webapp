@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-light min-vh-100" style="width: 280px;">
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light vh-100 position-sticky" style="width: 280px;">
   <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
     <svg class="bi me-2" width="40" height="32">
       <use xlink:href="#bootstrap"></use>
@@ -66,36 +66,3 @@
     </ul>
   </div>
 </div>
-<script>
-
-  // Hide submenus
-  $('#body-row .collapse').collapse('hide');
-
-  // Collapse/Expand icon
-  $('#collapse-icon').addClass('fa-angle-double-left');
-
-  // Collapse click
-  $('[data-toggle=sidebar-colapse]').click(function () {
-    SidebarCollapse();
-  });
-
-  function SidebarCollapse() {
-    $('.menu-collapsed').toggleClass('d-none');
-    $('.sidebar-submenu').toggleClass('d-none');
-    $('.submenu-icon').toggleClass('d-none');
-    $('#sidebar-container').toggleClass('sidebar-expanded sidebar-collapsed');
-
-    // Treating d-flex/d-none on separators with title
-    var SeparatorTitle = $('.sidebar-separator-title');
-    if (SeparatorTitle.hasClass('d-flex')) {
-      SeparatorTitle.removeClass('d-flex');
-    } else {
-      SeparatorTitle.addClass('d-flex');
-    }
-
-    // Collapse/Expand icon
-    $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
-  }
-
-
-</script>
