@@ -27,35 +27,70 @@
   </div>
 </div> -->
 
-<div class="row row-cols-1 row-cols-md-4 g-3">
-  <div class="col-3 m-0">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Deliveries Today</h5>
-        <p class="card-text">100</p>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-3 m-0">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Deliveries this week</h5>
-        <p class="card-text">1200</p>
+<div class="d-flex">
+  <app-navbar></app-navbar>
+  <div class="flex-grow-1 p-5">
+  
+    <div class="row row-cols-1 row-cols-md-4 g-3">
+      <div class="col-3 m-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">All Deliveries</h5>
+            <p class="card-text">{{deliveries.length}}</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-3 m-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">All Couriers</h5>
+            <p class="card-text">{{all_couriers}}</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-3 m-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Outra coisa qualquer</h5>
+            <p class="card-text">1200</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-3 m-0">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text"></p>
+    <div class="d-flex" style="margin-top: 5em">
+      <!-- <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+        [plugins]="barChartPlugins" [legend]="barChartLegend" [type]="barChartType">
+      </canvas> -->
+
+      <div class=" col-lg-4">
+        <app-pie-chart></app-pie-chart>
       </div>
+
+      <!-- ----- TABELA DE COURIERS ----- -->
+      <div class="col-lg-4" style="margin-left: 10em;">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Courier</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+          <!--  <tr *ngFor="let del of deliveries index as i">
+    
+              <td>{{ courier.name }}</td>
+              <td>{{ del.s }}</td>
+    
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+
     </div>
+
   </div>
 </div>
-
-<canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
-  [plugins]="barChartPlugins" [legend]="barChartLegend" [type]="barChartType">
-</canvas>

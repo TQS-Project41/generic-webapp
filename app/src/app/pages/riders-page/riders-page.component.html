@@ -1,24 +1,75 @@
-<h2>Riders</h2>
+<div class="d-flex">
+  <app-navbar></app-navbar>
+  <div class="flex-grow-1 p-5">
+    
+      
+    <p>Currently, we have {{couriers.length}} couriers </p> <!-- without a delivery -->
 
-<p>Currently we have 2 riders without a delivery</p>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Status</th>
-      <th scope="col">Localization</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let courier of couriers; index as i">
-      <th scope="row">{{ i + 1 }}</th>
-      <td>
-        {{ courier.name }}
-      </td>
-      <td>{{ courier.status }}</td>
-      <td>{{ courier.localization }}</td>
-    </tr>
-  </tbody>
-</table>
+    <h4 style="margin-top:1em">Applied Couriers</h4>
+    <table class="table table-striped" *ngIf="applied_couriers.length != 0">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Name</th>
+          <th scope="col">Birthdate</th>
+          <th scope="col">Status</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let courier of couriers; index as i">
+          <th scope="row">{{courier.id}}</th>
+
+          <td>{{ courier.name }}</td>
+
+          <td *ngIf="courier.birthdate != null">{{ courier.birthdate }}</td>
+          <td *ngIf="courier.birthdate == null"> undefined </td>
+
+          <td>
+            <span class="badge text-bg-secondary" style="font-size: medium;">waiting</span>
+          </td>
+
+          <td>
+            <button type="button" class="btn btn-success" style="margin-right: 1em;" (click)="accept(courier.id)">accept</button>
+            <button type="button" class="btn btn-secondary" style="margin-right: 1em;" (click)="refuse(courier.id)">refuse</button>
+            <button type="button" class="btn btn-secondary" routerLink="/riders/{{courier.id}}">see all deliveries</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 style="margin-top:2em">Active Couriers</h4>
+    <table class="table table-striped" *ngIf="active_couriers.length != 0">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Name</th>
+          <th scope="col">Birthdate</th>
+          <th scope="col">Status</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let courier of couriers; index as i">
+          <th scope="row">{{courier.id}}</th>
+
+          <td>{{ courier.name }}</td>
+
+          <td *ngIf="courier.birthdate != null">{{ courier.birthdate }}</td>
+          <td *ngIf="courier.birthdate == null"> undefined </td>
+
+          <td>
+            <span class="badge text-bg-secondary" style="font-size: medium;">waiting</span>
+          </td>
+
+          <td>
+            <button type="button" class="btn btn-secondary" style="margin-right: 1em;" >Dismiss</button>
+            <button type="button" class="btn btn-secondary" routerLink="/riders/{{courier.id}}">see all deliveries</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

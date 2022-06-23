@@ -1,0 +1,27 @@
+<div class="d-flex">
+    <app-navbar></app-navbar>
+    <div class="flex-grow-1 p-5">
+      
+        <table class="table table-striped" *ngIf="deliveries.length != 0">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Birthdate</th>
+                <th scope="col">Status</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let del of deliveries; index as i">
+                <th scope="row">{{del.id}}</th>
+      
+                
+              </tr>
+            </tbody>
+        </table>
+
+        <p *ngIf="deliveries.length == 0">No deliveries yet!</p>
+  
+    </div>
+  </div>
